@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="SemiWare/SemiWare.csproj" />
+  <Project Path="Tests/Tests.csproj" />
+</Solution>
