@@ -3,6 +3,14 @@ My first attempt publishing a NuGet package.
 
 It contains a tiny helper class for testing.
 
+## Installation
+
+How to install using command line (CLI):
+
+```
+dotnet add package SemiWare --version 1.0.0
+```
+
 ## Credits
 
 The `Attempt.ToDo()` method, and its variants, are modified versions of code posted by LBushkin on https://stackoverflow.com/a/1563234.
