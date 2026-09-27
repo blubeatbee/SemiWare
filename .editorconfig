@@ -1,0 +1,85 @@
+
+# This file is the top-most EditorConfig file
+# Stops EditorConfig from looking for other .editorconfig files in the folder above
+root = true
+
+
+# Global tweaks
+
+[*]
+charset = utf-8
+indent_style = space
+indent_size = 4
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+
+# File-specific tweaks
+
+[*.{json,json5,webmanifest,xml,config,props,targets}]
+indent_size = 2
+
+[*.{yml,yaml}]
+end_of_line = lf
+indent_size = 2
+
+[*.{md,mdx}]
+trim_trailing_whitespace = false
+
+[*.{csproj}]
+end_of_line = crlf
+indent_size = 2
+
+[*.{cs,csx}]
+end_of_line = crlf
+tab_width = 4
+
+
+# .NET Code Style
+
+dotnet_analyzer_diagnostic.severity = suggestion
+
+dotnet_style_require_accessibility_modifiers = always:none
+dotnet_style_parentheses_in_arithmetic_binary_operators = never_if_unnecessary:none
+
+dotnet_style_null_propagation = true:suggestion
+dotnet_style_coalesce_expression = true:suggestion
+dotnet_style_prefer_auto_properties = true:suggestion
+
+
+# C# Style
+
+csharp_style_var_for_built_in_types = true:silent
+csharp_style_var_when_type_is_apparent = true:silent
+csharp_style_var_elsewhere = true:silent
+
+csharp_style_expression_bodied_methods = true:suggestion
+csharp_style_expression_bodied_properties = true:suggestion
+
+csharp_style_pattern_matching_over_is_with_cast_check = true:suggestion
+
+csharp_prefer_braces = true:warning
+
+
+# Unnecessary code
+
+dotnet_code_quality_unused_parameters = all:suggestion
+dotnet_diagnostic.IDE0058.severity = suggestion
+dotnet_diagnostic.IDE0059.severity = suggestion
+
+
+# Naming rules
+
+dotnet_naming_rule.element_rule.severity = suggestion
+dotnet_naming_rule.interface_rule.severity = suggestion
+dotnet_naming_rule.parameters_rule.severity = suggestion
+
+dotnet_naming_rule.other_public_protected_fields_disallowed_rule.severity = none
+dotnet_naming_rule.stylecop_instance_fields_must_be_private_rule.severity = none
+
+
+# Formatting
+
+csharp_new_line_before_open_brace = all
+csharp_space_after_keywords_in_control_flow_statements = true
+csharp_space_around_binary_operators = before_and_after
