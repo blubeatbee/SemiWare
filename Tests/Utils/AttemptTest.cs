@@ -1,4 +1,4 @@
-﻿using SemiWare.Utils;
+using SemiWare.Utils;
 
 namespace Tests.Utils
 {
@@ -190,6 +190,26 @@ namespace Tests.Utils
             {
                 Assert.IsNull(exception);
             }
+        }
+
+        [TestMethod]
+        public void ToDoRepeatedly_TwoDifferentInterval_TwoActionRuns_OneActionIsSlower()
+        {
+            var timer1 = new System.Diagnostics.Stopwatch();
+            timer1.Start();
+            _ = Attempt.ToDoRepeatedly(() => Console.WriteLine("Yeay"), TimeSpan.FromMilliseconds(10), 20);
+            timer1.Stop();
+
+            var timer2 = new System.Diagnostics.Stopwatch();
+            timer2.Start();
+            _ = Attempt.ToDoRepeatedly(() =>
+            {
+                Console.WriteLine("Yeay");
+            }, TimeSpan.FromSeconds(10), 20);
+            timer2.Stop();
+
+            Console.WriteLine($"Timer2: {timer2.Elapsed.TotalMilliseconds} | Timer1: {timer1.Elapsed.TotalMilliseconds}");
+            Assert.IsGreaterThan(timer2.Elapsed.TotalMilliseconds, timer1.Elapsed.TotalMilliseconds);
         }
 
     }
