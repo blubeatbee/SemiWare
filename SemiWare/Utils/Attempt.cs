@@ -1,4 +1,4 @@
-﻿namespace SemiWare.Utils
+namespace SemiWare.Utils
 {
     /// <summary>
     /// Provides methods for repeatedly invoking an action.
@@ -45,7 +45,7 @@
                     exceptions.Add(ex);
                     Console.WriteLine($"\n'[{ex.GetType()}]' has occured!\n{ex.Message}");
                 }
-                Task.Delay(interval);
+                _ = Task.Delay(interval).ConfigureAwait(false);
             }
             throw new AggregateException(exceptions);
         }
@@ -104,7 +104,7 @@
                     Console.Write($"Failed! An '[{ex.GetType()}]' has occured.\n{ex.Message}");
                 }
                 results.Add(new(returnedValue, exception));
-                Task.Delay(interval);
+                _ = Task.Delay(interval).ConfigureAwait(false);
             }
             return results;
         }
