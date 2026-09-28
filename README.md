@@ -1,7 +1,14 @@
 # README
-My first attempt publishing a NuGet package. 
 
-It contains a tiny helper class for testing.
+My first attempt at publishing a NuGet package. 
+
+## Installation
+
+See [https://www.nuget.org/packages/SemiWare/](https://www.nuget.org/packages/SemiWare/) for more information. 
+
+## Features
+
+This package currently contains a tiny utility class used for testing methods.
 
 ## Credits
 
